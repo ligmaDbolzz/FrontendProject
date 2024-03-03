@@ -1,0 +1,2 @@
+# FrontendProject
+For educational purpose
