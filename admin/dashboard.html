@@ -2,7 +2,7 @@
     <html lang="en">
     <head>
       <meta charset="UTF-8" />
-      <title>user Dashboard | By Code Info</title>
+      <title>Admin Dashboard</title>
       <link rel="stylesheet" href="dashboard.css" />
       <!-- Font Awesome Cdn Link -->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
@@ -15,10 +15,6 @@
               <img src="https://slinkid.ptit.edu.vn/auth/resources/p64ct/login/ptit/dist/img/logo.png">
               <span class="nav-item"><strong>Admin</strong></span>
             </a></li>
-            <!-- <li><a href="#">
-              <i class="fas fa-comment"></i>
-              <span class="nav-item"><strong>Message</strong></span>
-            </a></li> -->
             <li><a href="#">
               <i class="fas fa-menorah"></i>
               <span class="nav-item"><strong>Tạo kỳ thi</strong></span>
@@ -41,8 +37,6 @@
             </a></li>
           </ul>
         </nav>
-    
-    
         <section class="main">
           <div class="main-top">
             <h1>Hệ thống quản lý</h1>
@@ -52,27 +46,27 @@
           <section class="user">
             <div class="user-list">
               <h1>Danh sách người dùng</h1>
-              <div class="user-input">
+              <div id="user-input">
                 <div>
                   <label for="">ID</label>
-                  <input type="text" placeholder="Nhập ID">
+                  <input type="text" id="id" placeholder="Nhập ID">
                 </div>
                 <div>
                   <label for="">Tên</label>
-                  <input type="text" placeholder="Nhập tên">
+                  <input type="text" id="name" placeholder="Nhập tên">
                 </div>
                 <div>
                   <label for="">Lớp</label>
-                  <input type="text" placeholder="Nhập lớp">
+                  <input type="text" id="class" placeholder="Nhập lớp">
                 <div>
                   <label for="">Ngày sinh</label>
-                  <input type="date" placeholder="Nhập ngày sinh">
+                  <input type="date" id="date" placeholder="Nhập ngày sinh">
                 </div>
                 <div>
-                  <button>Thêm</button>
+                  <button onclick="addUser()">Thêm</button>
                 </div> 
               </div>
-              <table class="table">
+              <table class="table" id="user-table">
                 <thead>
                   <tr>
                     <th>ID</th>
@@ -82,43 +76,6 @@
                     <th>Chi tiết</th>
                   </tr>
                 </thead>
-                <tbody>
-                  <tr>
-                    <td>B21DC123</td>
-                    <td>Tuấn đẹp zai</td>
-                    <td>Tán gái đại cương</td>
-                    <td>03-24-22</td>
-                    <td><button>Sửa</button>
-                      <button>Xóa</button>
-                    </td>
-                  </tr>
-                  <tr class="active">
-                    <td>02</td>
-                    <td>Balbina Kherr</td>
-                    <td>Coding</td>
-                    <td>03-24-22</td>
-                    <td><button>Sửa</button>
-                      <button>Xóa</button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>03</td>
-                    <td>Badan John</td>
-                    <td>testing</td>
-                    <td>03-24-22</td>
-                    <td><button>Sửa</button>
-                      <button>Xóa</button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>04</td>
-                    <td>Sara David</td>
-                    <td>Design</td>
-                    <td>03-24-22</td>
-                    <td><button>Sửa</button>
-                      <button>Xóa</button>
-                    </td>
-                  </tr>
                 </tbody>
               </table>
             </div>
