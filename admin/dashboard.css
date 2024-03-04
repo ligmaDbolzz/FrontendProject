@@ -158,9 +158,9 @@ a:hover i{
     transition: 0.5s;
 }
 
-/*user List serction  */
+/*user List section  */
 .user{
-    margin-top: 20px;
+    margin-top: 10px;
     text-transform: capitalize;
 }
 .user-list{
@@ -202,15 +202,16 @@ table thead tr{
 .table tbody tr:last-of-type{
     border-bottom: 2px solid red;
 }
-.table button{
-    padding: 6px 20px;
+button{
+    padding: 6px 15px;
     border-radius: 10px;
     cursor: pointer;
     background: transparent;
-    border: 1px solid red;
+    border: 2px solid red;
 }
-.table button:hover{
+button:hover{
     background: red;
     color: #fff;
     transition: 0.5rem;
 }
+
