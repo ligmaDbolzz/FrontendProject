@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng kí</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="image_holder center">
+            <img id="ptitLogo" src="https://i.gyazo.com/ad27bc12ca81e862ceb35328122757ee.png" alt="PtitLogo">
+        </div>
+        <div class="input_box">
+            <h1 class="center">Đăng kí</h1>
+        </div>
+
+        <form action="">
+            <div class="input_box">
+                <label id="user">Tên đăng nhập</label><br>
+                <input type="text" class="form-control" placeholder="Tối thiểu 8 kí tự chỉ bao gồm số và chữ">
+            </div>
+
+            <div class="input_box">
+                <label id="email">Tài khoản email</label><br>
+                <input type="text" class="form-control" placeholder="@gmai.com">
+            </div>
+
+            <div class="input_box">
+                <label id="pass">Mật khẩu</label><br>
+                <input type="password" class="form-control" placeholder="Tối thiểu 8 kí tự phải bao gồm ít nhất 1 số, chữ, chữ in"> 
+            </div>
+
+            <div class="input_box">
+                <label id="repass">Xác nhận mật khẩu</label><br>
+                <input type="password" class="form-control" placeholder="Nhập lại mật khẩu"> 
+            </div>
+
+            <div class="remember_forgot condition input_box">
+                <label><input type="checkbox" id="condition" name="condition">Tôi đã đọc kĩ <a href="#">điều khoản</a> và đồng ý</label>
+            </div>
+            <div class="input_box">
+                <button type="submit" class="btn btn-danger btn-primary btn-lg btn-block">Đăng kí</button>
+            </div>
+        </form>
+    </div>
+    
+    <script src="index.js"></script>
+</body>
+</html>

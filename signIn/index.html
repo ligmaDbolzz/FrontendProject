@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Nhập</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="image_holder center">
+            <img id="ptitLogo" src="https://i.gyazo.com/ad27bc12ca81e862ceb35328122757ee.png" alt="PtitLogo">
+        </div>
+        <div class="input_box">
+            <h1 class="center">Đăng nhập</h1>
+        </div>
+
+        <form action="">
+            <div class="input_box">
+                <label for="user">Tài khoản</label><br>
+                <input id="user" name="user" type="text" class="form-control" placeholder="Tên đăng nhập hoặc email">
+            </div>
+
+            <div class="input_box">
+                <label for="pass">Mật khẩu</label><br>
+                <input id="pass" name="pass" type="password" class="form-control" placeholder="Mật khẩu đăng nhập"> 
+            </div>
+            <div class="report center">
+                <p id="report"></p>
+            </div>
+            <div class="remember_forgot input_box">
+                <label><input type="checkbox" id="remember" name="remember">Ghi nhớ</label>
+                <a href="#">Quên mật khẩu?</a>
+            </div>
+            <div class="input_box">
+                <button id="signIn" type="button"
+                onclick="logIn()"
+                class="btn btn-danger btn-primary btn-lg btn-block">Đăng nhập</button>
+            </div>
+            <div class="register input_box">
+                <a href="sign_up.html">Đăng kí</a>
+            </div>
+        </form>
+    </div>
+    
+    <script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+body{
+    margin: 0;
+    border: 0;
+    padding-top: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(https://static.vecteezy.com/system/resources/previews/009/667/393/non_2x/seamless-watercolor-border-pattern-banner-cute-simple-eucalyptus-and-fern-leaves-abstract-print-with-transparent-green-leaves-isolated-on-white-background-vector.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+.center{
+    text-align: center;
+}
+.wrapper{
+    background-color: whitesmoke;
+    opacity: 0.95;
+    box-shadow:  10px 10px 5px lightblue;
+    margin: 0;
+    border: 0;
+    padding: 70px 50px;
+    border-radius: 15px;
+}
+#ptitLogo{
+    width: 10rem;
+    height: 10rem;
+    
+}
+.input_box{
+    /* background-color: blue; */
+    margin: 30px;
+    border: none;
+    padding: 0;
+    width: 25rem;
+}
+.input_box label{
+    font-weight: bolder;
+}
+.wrapper .remember_forgot{
+    display: flex;
+    justify-content: space-between;
+}
+a:link :visited :active{
+    color: red;
+}
+a:hover{
+    color: purple;
+}
+.report{
+    color: red;
+    font-weight: bolder;
+}
