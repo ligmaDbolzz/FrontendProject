@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng kí</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="image_holder center">
+            <img id="ptitLogo" src="https://i.gyazo.com/ad27bc12ca81e862ceb35328122757ee.png" alt="PtitLogo">
+        </div>
+        <div class="input_box">
+            <h1 class="center">Đăng kí</h1>
+        </div>
+
+        <form action="">
+            <div class="input_box">
+                <label for="user">Tên đăng nhập</label><br>
+                <input id="user" name="user" type="text" class="form-control" placeholder="Tối thiểu 8 kí tự chỉ bao gồm số và chữ">
+            </div>
+
+            <div class="input_box">
+                <label for="email">Tài khoản email</label><br>
+                <input id="email" name="email" type="text" class="form-control" placeholder="@gmai.com">
+            </div>
+
+            <div class="input_box">
+                <label for="pass">Mật khẩu</label><br>
+                <input id="pass" name="pass" type="password" class="form-control" placeholder="Tối thiểu 8 kí tự phải bao gồm ít nhất 1 số, chữ, chữ in"> 
+            </div>
+
+            <div class="input_box">
+                <label for="repass">Xác nhận mật khẩu</label><br>
+                <input id="repass" name="repass" type="password" class="form-control" placeholder="Nhập lại mật khẩu"> 
+            </div>
+            <div class="report center">
+                <p id="report"></p>
+            </div>
+            <!-- <div class="remember_forgot condition input_box">
+                <label><input type="checkbox" id="condition" name="condition">Tôi đồng ý với <a href="#">điều khoản và dịch vụ</a></label>
+            </div> -->
+            <div class="input_box">
+                <button id="signUpBtn" type="button" 
+                onclick="signUp()"
+                class="btn btn-danger btn-primary btn-lg btn-block">Đăng kí</button>
+            </div>
+        </form>
+    </div>
+    
+    <script src="sign_up.js"></script>
+</body>
+</html>
