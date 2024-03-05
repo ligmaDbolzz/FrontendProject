@@ -110,7 +110,7 @@ function submitTest(){
     //Submit the test and transfer the answer to result.html
     document.getElementById("submit-button").addEventListener("click", function(){
         clearInterval(timer); // Clear the timer
-        window.location.href = 'result.html?' + queryString; // Redirect to result.html with the query string
+        window.location.href = '../result/result.html?' + queryString; // Redirect to result.html with the query string
     });
 }
 
