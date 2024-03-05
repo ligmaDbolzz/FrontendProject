@@ -45,10 +45,13 @@ const quizz = [
         ]
     }
 ];
+
 buildTest();
 timer();
 submitTest();
 checkButton();
+let queryString = "";
+
 function buildTest(){
     for(let i = 0; i < quizz.length; i++){
         let question = quizz[i].question;
@@ -84,7 +87,6 @@ function buildTest(){
 }
 
 function checkButton(){
-    let queryString = "";
     let quizzesDiv = document.getElementById("quizzes");
     let quizzDiv = quizzesDiv.getElementsByClassName("quizz-div");
    
@@ -92,20 +94,11 @@ function checkButton(){
         let answerDiv = quizzDiv[i].getElementsByClassName("answer-div")[0];
         let answerElement = answerDiv.getElementsByTagName("button");
         
-        let previousAnswer = 0;
         for(let j = 0; j < answerElement.length; j++){
             answerElement[j].addEventListener("click", function(){
-                console.log("You clicked on " + (i+1) + " " + (j+1));
-                let currentAnswer = i+1;
-                // let previousAnswer = answerDiv.getElementsByClassName("selected");
-
-                // if(previousAnswer.length > 0){
-                //     previousAnswer[0].classList.remove("selected");
-                //     previousAnswer[0].style.backgroundColor = ""; // Reset the background color
-                // }
-
-                // answerElement[j].classList.add("selected");
-                // answerElement[j].style.backgroundColor = "red";
+                console.log("You clicked on " + (i + 1) + " " + (j + 1));
+                queryString += "question" + (i + 1) + "=" + (j + 1) + "&";
+                answerElement[j].style.background = "red";
             });
         }
     }
@@ -117,7 +110,6 @@ function submitTest(){
     //Submit the test and transfer the answer to result.html
     document.getElementById("submit-button").addEventListener("click", function(){
         clearInterval(timer); // Clear the timer
-        queryString = getAnswer(); // Get the answer of each question
         window.location.href = 'result.html?' + queryString; // Redirect to result.html with the query string
     });
 }
