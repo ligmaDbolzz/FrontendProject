@@ -87,7 +87,6 @@ displayResult();
 
 // Function to display review questions
 function displayReviewQuestions() {
-    console.log("Displaying review questions");
     const reviewQuestions = document.getElementById("reviewQuestions");
     reviewQuestions.style.display = "block";
     const questionList = document.getElementById("questionList");
@@ -97,11 +96,12 @@ function displayReviewQuestions() {
 
     quizz.forEach((question, index) => {
         const listItem = document.createElement("li");
-        listItem.style.listStyleType = "none"; // Clear bullet
+        listItem.style.listStyleType = "none"; // Remove bullet
+
         listItem.innerHTML = `
             <div class="quizz-div">
                 <div class="question-div">
-                    <h4>Câu hỏi ${index + 1}: ${question.question}</h4>
+                    <h4>Question ${index + 1}: ${question.question}</h4>
                 </div>
                 <div class="answer-div">
                     <p>Correct Answer: ${question.answers.find(answer => answer.correct).text}</p>
@@ -113,9 +113,9 @@ function displayReviewQuestions() {
         // Check if user's answer is correct and apply appropriate styling
         const userAnswerIndex = parseInt(params[`question${index + 1}`]) - 1;
         if (question.answers[userAnswerIndex].correct) {
-            listItem.style.color = "green";
+            listItem.classList.add("correct-answer");
         } else {
-            listItem.style.color = "red";
+            listItem.classList.add("wrong-answer");
         }
 
         questionList.appendChild(listItem);
