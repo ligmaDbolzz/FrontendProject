@@ -20,7 +20,7 @@ function logIn(){
         window.location.href = "../admin/dashboard/dashboard.html";
     }else if((user.localeCompare(okUser)==0 || user.localeCompare(okEmal)==0)&& pass.localeCompare(okPass)==0){
         isLogIn = true;
-        window.location.href = "user";
+        window.location.href = "/../user/trangchinh/trangchinh.html";
     }else{
         if(user.length==0 || pass.length==0){
             document.getElementById("report").textContent = "Hãy điền đầy đủ thông tin";

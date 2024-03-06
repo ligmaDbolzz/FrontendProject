@@ -1,3 +1,4 @@
+/*  import google fonts */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 *{
     margin: 0;
@@ -87,6 +88,7 @@ a:hover i{
     display: flex;
 }
 
+/* MAin Section */
 .main{
     position: relative;
     padding: 20px;
@@ -103,8 +105,16 @@ a:hover i{
     color: rgb(110, 109, 109);
     cursor: pointer;
 }
-
-.main-body{
+.main .users{
+    display: flex;
+    width: 100%;
+}
+/*user List section  */
+.user{
+    margin-top: 10px;
+    text-transform: capitalize;
+}
+.user-list{
     width: 100%;
     padding: 10px;
     margin-top: 10px;
@@ -112,93 +122,79 @@ a:hover i{
     border-radius: 10px;
     box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
 }
-
-.main-body {
-    font-family: Arial, sans-serif;
-    padding: 20px;
-  }
-  
-  .form-group {
-    margin-bottom: 20px;
-  }
-  
-label {
-display: block;
-font-weight: bold;
-}
-
-input[type="text"],
-textarea,
-select {
-width: 100%;
-padding: 10px;
-border: 1px solid #ccc;
-border-radius: 5px;
-box-sizing: border-box;
-}
-
-textarea {
-resize: vertical;
-}
-
-button {
-padding: 10px 20px;
-border: none;
-border-radius: 5px;
-cursor: pointer;
-}
-
-.btn-primary {
-background-color: #007bff;
-color: #fff;
-}
-
-.btn-primary:hover {
-background-color: #0056b3;
-}
-
-.btn-success {
-background-color: #28a745;
-color: #fff;
-}
-
-.btn-success:hover {
-background-color: #218838;
-}
-
-#questionsContainer {
-margin-top: 20px;
-}
-
-h2 {
-margin-top: 20px;
-}
-/* 
-    table styling
-
-*/
-#questionsTable {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-
-#questionsTable th, #questionsTable td {
-    border: 1px solid #ddd;
-    padding: 8px;
+table thead tr{
+    color: #fff;
+    background: red;
     text-align: left;
+    font-weight: bold;
+}
+.table{
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 15px;
+    min-width: 100%;
+    overflow: hidden;
+    border-radius: 5px 5px 0 0;
+}
+.table th,
+.table td{
+    padding: 12px 15px;
+}
+.table tbody tr{
+    border-bottom: 1px solid #ddd;
+}
+.table tbody tr:nth-of-type(odd){
+    background: #f3f3f3;
+}
+.table tbody tr.active{
+    font-weight: bold;
+    color: red;
+}
+.table tbody tr:last-of-type{
+    border-bottom: 2px solid red;
 }
 
-#questionsTable th {
-    background-color: #f2f2f2;
-    color: black;
+.popup {
+    position: fixed;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    max-width: 400px;
 }
 
-#questionsTable tr:nth-child(even) {
-    background-color: #f2f2f2;
+.popup label {
+    display: block;
+    margin-bottom: 10px;
 }
 
-#questionsTable tr:hover {
-    background-color: #ddd; 
-} 
+.popup input {
+    width: 100%;
+    padding: 1px;
+    margin-bottom: 10px;
+}
+
+.popup button {
+    padding: 8px 20px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+button{
+    padding: 6px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    background: transparent;
+    border: 2px solid red;
+}
+button:hover{
+    background: red;
+    color: #fff;
+    transition: 0.5rem;
+}
 

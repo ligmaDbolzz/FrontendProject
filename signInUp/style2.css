@@ -1,0 +1,53 @@
+body{
+    margin: 0;
+    border: 0;
+    padding-top: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA4L3Jhd3BpeGVsb2ZmaWNlMl9kaWdpdGFsX3BhaW50X21pbmltYWxfaWxsdXN0cmF0aW9uX29mX2NsZWFuX2p1bl8wNzUzYTY0ZC03ZDYxLTRjZjItYmI4YS0wNGMzMjFhYjViYzBfMS5qcGc.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+.center{
+    text-align: center;
+}
+.wrapper{
+    background-color: whitesmoke;
+    opacity: 0.95;
+    box-shadow:  10px 10px 5px lightblue;
+    margin: 0;
+    border: 0;
+    padding: 70px 50px;
+    border-radius: 15px;
+}
+#ptitLogo{
+    width: 10rem;
+    height: 10rem;
+    
+}
+.input_box{
+    /* background-color: blue; */
+    margin: 30px;
+    border: none;
+    padding: 0;
+    width: 25rem;
+}
+.input_box label{
+    font-weight: bolder;
+}
+.wrapper .remember_forgot{
+    display: flex;
+    justify-content: space-between;
+}
+a:link :visited :active{
+    color: red;
+}
+a:hover{
+    color: purple;
+}
+.report{
+    color: red;
+    font-weight: bolder;
+}

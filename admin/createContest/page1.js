@@ -5,66 +5,36 @@ document.getElementById('uploadExcel').addEventListener('click', function() {
     input.onchange = function(e) {
         const file = e.target.files[0];
         if (file) {
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                const data = new Uint8Array(e.target.result);
-                const workbook = XLSX.read(data, {type: 'array'});
-                const worksheet = workbook.Sheets[workbook.SheetNames[0]];
-                const jsonData = XLSX.utils.sheet_to_json(worksheet, {header: 1});
-                displayExcelData(jsonData);
-            };
-            reader.readAsArrayBuffer(file);
+            // Giả định rằng bạn đã có một cách để xử lý file Excel trên phía máy chủ
+            // và trả về dữ liệu câu hỏi và đáp án dưới dạng JSON
+            fetch('/path/to/your/server/endpoint', {
+                method: 'POST',
+                body: file
+            })
+            .then(response => response.json())
+            .then(data => {
+                const tbody = document.getElementById('questionsContainer').querySelector('tbody');
+                tbody.innerHTML = ''; // Xóa câu hỏi hiện tại
+                data.forEach(question => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${question.stt}</td>
+                        <td>${question.question}</td>
+                        <td>${question.answers.a}</td>
+                        <td>${question.answers.b}</td>
+                        <td>${question.answers.c}</td>
+                        <td>${question.answers.d}</td>
+                        <td>${question.correctAnswer}</td>
+                        <td>${question.detailedAnswer}</td>
+                    `;
+                    tbody.appendChild(row);
+                });
+            })
+            .catch(error => console.error('Error:', error));
         }
     };
     input.click();
 });
-
-function displayExcelData(data) {
-    const questionsContainer = document.getElementById('questionsContainer');
-    questionsContainer.innerHTML = ''; // Clear existing questions
-
-    data.forEach((row, index) => {
-        if (index === 0) return; // Skip header row
-
-        const questionForm = document.createElement('div');
-        questionForm.classList.add('question-form');
-        questionForm.innerHTML = `
-            <div class="form-group">
-                <label for="questionText">Câu hỏi</label>
-                <input type="text" class="form-control" id="questionText" value="${row[0]}" readonly>
-            </div>
-            <div class="form-group">
-                <label for="answerA">Đáp án A</label>
-                <input type="text" class="form-control" id="answerA" value="${row[1]}" readonly>
-            </div>
-            <div class="form-group">
-                <label for="answerB">Đáp án B</label>
-                <input type="text" class="form-control" id="answerB" value="${row[2]}" readonly>
-            </div>
-            <div class="form-group">
-                <label for="answerC">Đáp án C</label>
-                <input type="text" class="form-control" id="answerC" value="${row[3]}" readonly>
-            </div>
-            <div class="form-group">
-                <label for="answerD">Đáp án D</label>
-                <input type="text" class="form-control" id="answerD" value="${row[4]}" readonly>
-            </div>
-            <div class="form-group">
-                <label for="correctAnswer">Đáp án đúng</label>
-                <select class="form-control" id="correctAnswer" disabled>
-                    <option>${row[5]}</option>
-                </select>
-            </div>
-            <button class="btn btn-danger removeQuestionBtn">Xóa câu hỏi</button>
-        `;
-
-        questionForm.querySelector('.removeQuestionBtn').addEventListener('click', function() {
-            questionsContainer.removeChild(questionForm);
-        });
-
-        questionsContainer.appendChild(questionForm);
-    });
-}
 
 document.getElementById('addQuestionBtn').addEventListener('click', function() {
     const questionsContainer = document.getElementById('questionsContainer');

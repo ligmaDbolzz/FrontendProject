@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Chủ</title>
+    <link rel = "stylesheet" href ="style.css">
+</head>
+<body>
+    <h1> Trang Chủ </h1>
+
+    <div>
+        <label for="searchInput"> Tìm kiếm bài thi:</label>
+        <input type="text" id="searchInput" oninput="searchExam()">
+        <label for="statusFilter">Lọc:</label>
+        <select id="statusFilter" onchange="filterExam()">
+            <option value="all">Tất cả </option>
+            <option value="free">Tự do</option>
+            <option value="restricted">Tính giờ</option>
+        </select>
+    </div>
+    <ul id="examList">
+
+    </ul>
+    <script>
+        const exams = [
+            { name: "Luyện tập", status: "free" },
+            { name: "Giữa kỳ", status: "restricted" },
+            { name: "Cuối kỳ", status: "restricted" },
+        ];
+
+        function displayExam(examToShow) {
+            const examList = document.getElementById("examList");
+            examList.innerHTML = "";
+
+            examToShow.forEach(exam => {
+                const listItem = document.createElement("li");
+                listItem.textContent = `${exam.name}`;
+                listItem.addEventListener("click", () => startExam(exam));
+                examList.appendChild(listItem);
+            });
+        }
+
+        function filterExam() {
+            const statusFilter = document.getElementById("statusFilter").value;
+            const filteredExam = (statusFilter === "all") ? exams : exams.filter(exam => exam.status === statusFilter);
+            displayExam(filteredExam);
+        }
+
+        function searchExam() {
+            const searchInput = document.getElementById("searchInput").value.toLowerCase();
+            const filteredExam = exams.filter(exam => exam.name.toLowerCase().includes(searchInput));
+            displayExam(filteredExam);
+        }
+
+        function startExam(exam) {
+            window.location.href = '../test_page/test.html';
+        }
+
+        
+        displayExam(exams);
+    </script>
+</body>
+</html>

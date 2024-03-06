@@ -1,0 +1,75 @@
+<span style="font-family: verdana, geneva, sans-serif;"><!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <title>Admin Dashboard</title>
+      <link rel="stylesheet" href="dashboard.css" />
+      <!-- Font Awesome Cdn Link -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+    </head>
+    <body>
+      <div class="container">
+        <nav>
+          <ul>
+            <li><a href="../dashboard/dashboard.html" class="logo">
+              <img src="https://slinkid.ptit.edu.vn/auth/resources/p64ct/login/ptit/dist/img/logo.png">
+              <span class="nav-item"><strong>Admin</strong></span>
+            </a></li>
+            <li><a href="../createContest/page3.html">
+              <i class="fas fa-menorah"></i>
+              <span class="nav-item"><strong>Tạo kỳ thi</strong></span>
+            </a></li>
+            <li><a href="../search/search.html">
+              <i class="fas fa-database"></i>
+              <span class="nav-item"><strong>Xem kết quả</strong></span>
+            </a></li>
+            <li><a href="../statistic/statistic.html">
+              <i class="fas fa-chart-bar"></i>
+              <span class="nav-item"><strong>Thống kê</strong></span>
+            </a></li>
+            <li><a href="#">
+              <i class="fas fa-cog"></i>
+              <span class="nav-item"><strong>Cài đặt</strong></span>
+            </a></li>
+            <li><a href="../../signInUp/index.html" class="logout">
+              <i class="fas fa-sign-out-alt"></i>
+              <span class="nav-item">Đăng xuất</span>
+            </a></li>
+          </ul>
+        </nav>
+        <section class="main">
+          <div class="main-top">
+            <h1>Hệ thống quản lý</h1>
+            <i class="fas fa-user-cog"></i>
+          </div>
+          
+          <section class="user">
+            <div class="user-list">
+              <h1>Thông tin sinh viên</h1>
+              <div id="student-info">
+                <div>
+                  <p>ID kỳ thi: t1</p>
+                  <p>Điểm số: 2</p>
+                  <p>Danh sách câu hỏi:</p>
+                </div> 
+              </div>
+              <table class="table" id="user-table">
+                <thead>
+                  <tr>
+                    <th>Câu hỏi</th>
+                    <th>Đáp án của sinh viên</th>
+                    <th>Đáp án đúng</th>
+                    <th>Lí do</th>
+                  </tr>
+                </thead>
+                </tbody>
+              </table>
+            </div>
+          </section>
+        </section>
+        
+      </div>
+      <script src="detail.js"></script>
+    </body>
+    </html>
+    </span>
